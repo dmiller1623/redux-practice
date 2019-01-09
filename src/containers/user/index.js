@@ -54,7 +54,7 @@ class User extends Component {
           />
           <button>Submit</button>
         </form>
-          <button>signout</button>
+          <button onClick={this.handleSignOut}>signout</button>
       </div>
     )
   }
