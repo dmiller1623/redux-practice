@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { signInUser } from '../../actions'
+import { signInUser, signOutUser } from '../../actions'
 
 class User extends Component {
   constructor() {
@@ -27,7 +27,7 @@ class User extends Component {
   }
 
   handleSignOut = () => {
-
+    this.props.signOutUser()
   }
 
   render () {
@@ -61,7 +61,8 @@ class User extends Component {
 }
 
 export const mapDispatchToProps = (dispatch) => ({
-  signInUser: (user) => dispatch(signInUser(user))
+  signInUser: (user) => dispatch(signInUser(user)),
+  signOutUser: () => dispatch(signOutUser())
 })
 
 
