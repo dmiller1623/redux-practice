@@ -26,7 +26,9 @@ class User extends Component {
     this.props.signInUser(this.state)
   }
 
- 
+  handleSignOut = () => {
+
+  }
 
   render () {
     return (
@@ -52,6 +54,7 @@ class User extends Component {
           />
           <button>Submit</button>
         </form>
+          <button>signout</button>
       </div>
     )
   }
