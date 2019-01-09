@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
-
+import { signInUser } from '../../actions'
 
 class User extends Component {
   constructor() {
@@ -51,5 +50,10 @@ class User extends Component {
     )
   }
 }
+
+export default mapDispatchToProps = (dispatch) => ({
+  signInUser: (user) => dispatch(signInUser(user))
+})
+
 
 export default connect(null, mapDispatchToProps)(User)
