@@ -20,6 +20,12 @@ class User extends Component {
     })
   }
 
+  handleSubmit = (event) => {
+    event.preventDefault();
+
+    this.props.signInUser(this.state)
+  }
+
  
 
   render () {
@@ -51,7 +57,7 @@ class User extends Component {
   }
 }
 
-export default mapDispatchToProps = (dispatch) => ({
+export const mapDispatchToProps = (dispatch) => ({
   signInUser: (user) => dispatch(signInUser(user))
 })
 

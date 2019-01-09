@@ -1,4 +1,4 @@
-export default signInUser = (user) ({
+export const signInUser = (user) => ({
   type: 'SIGN_IN', 
   user
 })
