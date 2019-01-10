@@ -24,6 +24,7 @@ class User extends Component {
     event.preventDefault();
 
     this.props.signInUser(this.state)
+    console.log(this.props.user)
   }
 
   handleSignOut = () => {
@@ -65,5 +66,8 @@ export const mapDispatchToProps = (dispatch) => ({
   signOutUser: () => dispatch(signOutUser())
 })
 
+export const mapStateToProps = (state) => ({
+  user: state.user
+})
 
-export default connect(null, mapDispatchToProps)(User)
+export default connect(mapStateToProps, mapDispatchToProps)(User)
