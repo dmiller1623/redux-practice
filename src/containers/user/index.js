@@ -8,7 +8,7 @@ class User extends Component {
     this.state = {
       userName: '',
       email: '',
-      password: ''
+      password: '',
     }
   }
 
@@ -22,12 +22,10 @@ class User extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-
     this.props.signInUser(this.state)
   }
   
   handleSignOut = () => {
-    console.log(this.props.user.userName)
     let { name } = this.props.user.userName
     if (!name) {
       alert('No user signed in')
@@ -36,6 +34,14 @@ class User extends Component {
   }
 
   render () {
+    let user = this.props.user.userName
+    if(user) {
+      return (
+        <div>
+          <h1>Welcome {user}</h1>
+        </div>
+      )
+    }
     return (
       <div>
         <form onSubmit={(event) => this.handleSubmit(event)}>
