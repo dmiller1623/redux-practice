@@ -24,10 +24,14 @@ class User extends Component {
     event.preventDefault();
 
     this.props.signInUser(this.state)
-    console.log(this.props.user)
   }
-
+  
   handleSignOut = () => {
+    console.log(this.props.user.userName)
+    let { name } = this.props.user.userName
+    if (!name) {
+      alert('No user signed in')
+    } 
     this.props.signOutUser()
   }
 
